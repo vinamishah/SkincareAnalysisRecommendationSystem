@@ -1,0 +1,178 @@
+Functions
+
+def readSpreadsheet(link):
+•	Input: Link to a spreadsheet containing the data
+•	The function converts the hyperlink to a dataframe 
+•	Output: data frame containing the data 
+return df
+
+def cleanData(df):
+•	Input: data frame containing the dataset 
+•	This function cleans the dataset- it handles missing values, formatting inconsistencies and duplicates: and removes rows containing ‘visit the store’ or #NAME? or No info in the ingredient column 
+ # Handle missing values
+df.dropna(inplace =True)
+•	Output: cleaned version of the dataset
+return df
+
+def statFinder (df):
+•	Input: clean data frame containing the dataset 
+•	This function takes the clean data set and finds:
+o	Max of rating under each product type (eg sunscreen moisturizer etc) and outputs the name of the corresponding brand + product. 
+o	Summary statistics for the price of products under each product type using sp.stats.describe(df['price']). A bar graph comparing the mean price across all product types is created. 
+•	Use chi squared test to check if the variables are corelated. (If p<0.05, output yes, related. Otherwise, output no, not related. print)
+•	Output: a stats dataframe with index as product type and columns Highest rating, and a column for each price descriptive stat. chi squared test p value. (not returned but outputted bar graph)
+return statdf
+
+def priceOutliers(df):
+•	Input: clean data frame containing the dataset 
+•	This function takes the clean data set and plots a histogram of the price column. The values that appear as small bins at the ends of the plot are outliers(uses z score). 
+•	The product brand + names of the outlier price values will be extracted to find higher end and lower end products. two lists will be created- one containing names of products of the low outliers and one containing the high. 
+•	Output: 2 lists containing names of products of high and low outliers.  (not returned by outputted- histogram)
+return lowList, highList
+
+def ingredientAnalyser (df):
+•	Input: cleaned dataframe containing the data 
+•	Finds the most common active ingredients (Except water/aqua, glycerin, Phenoxyethanol And Butylene Glycol) under each product type. 
+•	Finds the most common active ingredients (Except water/aqua, glycerin, Phenoxyethanol And Butylene Glycol)for each skin type. 
+•	Output: 2 dictionaries containing the ingredient names.
+return dict1, dict2
+
+def ingredientEncoding (df):
+•	Input: cleaned dataframe containing the data 
+•	Extract the ingredient column and convert it to a numerical format using Ingredient Set Encoding. represent each product's ingredients as a set of unique ingredients and create binary columns for the top 80% of every product’s ingredients(as these are the ones present in substantial concentrations). (This approach reduces the number of features compared to one-hot encoding each ingredient individually.): 
+# Extract the 'ingredients' column
+ingredients_column = df['ingredients']
+
+# Create an empty set to store unique ingredients
+unique_ingredients = set()
+
+# Iterate over each product's ingredient list
+for ingredients_list in ingredients_column:
+    # Calculate 80% of the length of the ingredient list
+    eighty_percent_length = int(0.8 * len(ingredients_list.split(', ')))
+    # Select the first 80% of ingredients from the ingredient list
+    selected_ingredients = ingredients_list.split(', ')[:eighty_percent_length]
+    # Add selected ingredients to the set of unique ingredients
+    unique_ingredients.update(selected_ingredients)
+
+# Convert the set of unique ingredients to a list
+unique_ingredients_list = list(unique_ingredients)
+
+# Split the 'ingredients' column into multiple binary columns for each ingredient
+ingredient_dummies = df['ingredients'].str.get_dummies(sep=', ')
+
+# Select only the columns corresponding to the unique ingredients
+ingredient_dummies = ingredient_dummies[unique_ingredients_list]
+# Concatenate the original DataFrame with the binary columns
+df_encoded = pd.concat([df, ingredient_dummies], axis=1)
+•	Output: DataFrame with original columns and  binary columns of ingredient set encoding.
+return df_encoded
+
+def kFinder (df_encoded):
+•	Input: the encoded dataframe
+•	Finds the optimal k value to perform K means clustering on the ingredient data using the elbow method
+#extracting binary columns 
+binary= df_encoded.iloc[:, 10:]
+SSE = []
+kmeans_kwargs = {"init": "random", "n_init": 10, "max_iter": 300, "random_state": 29}
+for k in range(1,11):
+  kmeans = KMeans(n_clusters = k, **kmeans_kwargs)
+  kmeans.fit(binary)
+  SSE.append(kmeans.inertia_)
+kValue = KneeLocator(range(1,11), SSE, curve = "convex", direction = "decreasing")
+•	Output: K value
+return kValue.elbow
+
+def applyKMeansClustering (df_encoded, k):
+•	Input: the encoded dataframe and K value (number of clusters)
+•	This function will apply K-means clustering to group products into similar categories based on ingredient composition, utilizing machine learning techniques to identify clusters of products with similar formulations, facilitating product categorization and comparison:
+#extracting binary columns 
+binary= df_encoded.iloc[:, 10:]
+# Initialize KMeans object with the desired number of clusters
+kmeans = KMeans(init="random", n_clusters=k, n_init=10, max_iter=100, random_state=29)
+# Fit K-means model to the binary data
+kmeans.fit(binary)
+# Assign each product to a cluster
+cluster_labels = kmeans.predict(binary)
+# Get cluster centres
+cluster_centers = kmeans.cluster_centers_
+•	Output: array containing the cluster labels assigned to each product, an array containing the cluster centers.
+return cluster_lables, cluster_centers
+
+def clusterVisualisation (df_encoded, cluster_labels):
+•	Input: the data frame with the binary encoded columns and the array of cluster labels. 
+•	This function uses dimensionality reduction -Principal Component Analysis (PCA) - to reduce the dimensionality of the binary encoded features to two or three dimensions. Then, plot the products in the reduced space and colour them according to their assigned cluster labels.
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+#extracting binary columns 
+binary= df_encoded.iloc[:, 10:]
+ # Apply PCA to reduce dimensionality to 2 dimensions
+    pca = PCA(n_components=2)
+    reduced_features = pca.fit_transform(binary)
+    
+    # Plot products in reduced space
+    plt.figure(figsize=(8, 6))
+    for cluster_label in set(cluster_labels):
+        # Select products belonging to the current cluster
+        cluster_indices = cluster_labels == cluster_label
+        plt.scatter(reduced_features[cluster_indices, 0], reduced_features[cluster_indices, 1], label=f'Cluster {cluster_label}')
+    
+    plt.title('Clustering Results Visualization')
+    plt.xlabel('Principal Component 1')
+    plt.ylabel('Principal Component 2')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+•	Output: plot of similar products based on ingredient lists clustered together
+return
+
+def fungalAcneTriggers (df_encoded, productname):
+•	Input: dataframe and a product name. 
+•	This function compares a pre-defined list of fungal acne triggers to a specific product’s dataframe’s ingredients list and add a column containing the list of fungal acne triggers in each product’s ingredient list (if any)
+•	Output: list of triggers in given product. Dataframe with added column 
+return triggerdf 
+def recommendationSystem (df_encoded, productname, k):
+Disclaimer and assusmption: all products are not included here. Products may be names differently in both cases . 
+•	Input: encoded dataframe, a product name inputted by the user, and k value for the cluster function. 
+•	Using cluster function, find products with similar ingredient list
+•	Narrow down the products to include only the products with same product type and skin suitability
+•	 Run fungal acne triggers function for each of the products 
+•	Output:  a dataframe consisting of these narrowed down products with a column for brand, name, price(sorted in ascending order), and a list of fungal acne triggers int eh product (if any) 
+return df
+
+def main():
+•	Runs all the functions to output all the desired information. (outputs are outlined later)
+
+Unit tests
+
+statFinder(df):
+Test by value: Check if the maximum rating under each product type matches the expected values for a known dataset.
+Test by value: Ensure that the summary statistics for the price of products are calculated correctly by comparing them to known values for a test dataset.
+Test by value: Verify that the correlation between price and rating is computed accurately by comparing it to the expected correlation coefficient for a synthetic dataset with a known relationship between price and rating.
+
+priceOutliers(df):
+Test by value: Confirm that the function correctly identifies high and low outliers in the price column by comparing the detected outliers to manually verified outliers in a test dataset.
+Test by type: Verify that the output of the function is a tuple containing two lists, one for low outliers and one for high outliers
+
+ingredientEncoding(df):
+Test by value: Check a few randomly selected rows to confirm that the encoding process produces the expected binary values for specific ingredients in the ingredient list.
+Test by value: Verify that the function handles different ingredient lists correctly by providing datasets with different types and lengths of ingredient lists and ensuring that the encoding is accurate.
+
+recommendationSystem(df_encoded, productname, k):
+Test by length: Check if the recommendation list has the expected number of products for a given product and cluster configuration.
+Test by value: Ensure that the recommended products have the correct brand, name, and price by comparing them to the expected values for a known dataset.
+Test by value: Verify that the function handles different products and cluster configurations correctly by testing with various product names and cluster configurations and confirming that the recommendations are sensible.
+
+Predicted outputs of program: 
+
+Statistics:
+•	a dataframe with index as product type and columns Highest rating, and a column for each price stat including mean, min max, and var. 
+•	A bar graph comparing the mean price across all product types is created.
+•	yes/no result of chi squared test. 
+•	A histogram of the price column along with 2 lists containing names of high priced and low products 
+•	Finds the most common ingredients (Except water/aqua) under each product type. 
+•	2 lists containing the ingredient names of most common ingredients (Except water/aqua) under each product type and most common ingredients (Except water/aqua) for each skin type.
+•	plot of similar products based on ingredient lists clustered together.
+
+Recommendation:
+•	a dataframe consisting of these narrowed down products with a column for brand, name, price(sorted in ascending order), and a list of fungal acne triggers in the product (if any) 
