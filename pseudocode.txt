@@ -141,7 +141,7 @@ Disclaimer and assusmption: all products are not included here. Products may be 
 return df
 
 def main():
-•	Runs all the functions to output all the desired information. (outputs are outlined later)
+•	Runs all the functions to output all the desired information
 
 UNIT TESTS
 
