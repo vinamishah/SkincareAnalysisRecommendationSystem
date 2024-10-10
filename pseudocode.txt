@@ -1,4 +1,4 @@
-Functions
+FUNCTIONS
 
 def readSpreadsheet(link):
 •	Input: Link to a spreadsheet containing the data
@@ -143,7 +143,7 @@ return df
 def main():
 •	Runs all the functions to output all the desired information. (outputs are outlined later)
 
-Unit tests
+UNIT TESTS
 
 statFinder(df):
 Test by value: Check if the maximum rating under each product type matches the expected values for a known dataset.
@@ -163,7 +163,7 @@ Test by length: Check if the recommendation list has the expected number of prod
 Test by value: Ensure that the recommended products have the correct brand, name, and price by comparing them to the expected values for a known dataset.
 Test by value: Verify that the function handles different products and cluster configurations correctly by testing with various product names and cluster configurations and confirming that the recommendations are sensible.
 
-Predicted outputs of program: 
+PREDICTED OUTPUTS OF PROGRAM
 
 Statistics:
 •	a dataframe with index as product type and columns Highest rating, and a column for each price stat including mean, min max, and var. 
