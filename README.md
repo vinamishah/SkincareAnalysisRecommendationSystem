@@ -12,22 +12,23 @@ Computation is mainly incorporated through machine learning.  Ingredient lists o
 
 **Key Results**:
 Chi-squared test result: Yes, price of a product and its rating are related. 
-Statistics: <img width="662" alt="image" src="https://github.com/user-attachments/assets/88861076-1f43-4944-b8a6-a6f92fca7029">
+
+Statistics: 
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/88861076-1f43-4944-b8a6-a6f92fca7029">
+
 <img width="358" alt="image" src="https://github.com/user-attachments/assets/7bb3e205-e346-4b12-a2b9-b671c4a55f22">
+
 <img width="286" alt="image" src="https://github.com/user-attachments/assets/e1f31088-2521-4c64-ba75-57f6dd6a52b2">
+
 Extremely high-priced products: ['LA MER - Little Miss Miracle Limited-Edition Crème de la Mer', 'FRESH - Crème Ancienne®', 'LA MER - The Concentrate', 'LA MER - The Regenerating Serum', 'BIOEFFECT - 30 Day Treatment', 'SHISEIDO - Future Solution LX Intensive Firming Contour Serum']
+
 Most common ingredients according to product type: {'Moisturizer': 'Dimethicone', 'Cleanser': 'Citric Acid', 'Treatment': 'Sodium Hyaluronate', 'Face Mask': 'Xanthan Gum', 'Eye cream': 'Dimethicone', 'Sun protect': 'Dimethicone'}
+
 Most common ingredients according to skin type: {'Combination': 'Ethylhexylglycerin', 'Dry': 'Ethylhexylglycerin', 'Normal': 'Caprylyl Glycol', 'Oily': 'Caprylyl Glycol', 'Sensitive': 'Caprylyl Glycol'} 
+
 <img width="320" alt="image" src="https://github.com/user-attachments/assets/e6d8b1c6-44ce-4807-8cdc-6b916e46b914">
 
 Recommendation system (example input: Multi-Active Day Cream SPF 20 - All Skin Types):<img width="575" alt="image" src="https://github.com/user-attachments/assets/9200029c-25d1-4901-8816-120cd3d521c1">
-
-
-
-
-
-
-
 
 **Assumptions and simplifications**:
 Firstly, different ingredient names for the same ingredient in different lists are disregarded. In frequency analysis, while excluding inactive ingredients like water and glycerin it is assumed they are listed in the format the function expects. Some lists use slashes for alternative names; I split these into separate ingredients during encoding. Though this may double-count ingredients for specific products, it doesn't affect clustering results since the ingredients with alternate names would also be double-counted in other lists. The fungal acne trigger list in the code isn't exhaustive, and products may contain triggers not on the list. Lastly, the recommendation system assumes users input product names exactly as listed in the database; spelling errors or shortened names are not considered.
