@@ -33,7 +33,9 @@ Most common ingredients according to skin type: {'Combination': 'Ethylhexylglyce
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/e6d8b1c6-44ce-4807-8cdc-6b916e46b914">
 
-Recommendation system (example input: Multi-Active Day Cream SPF 20 - All Skin Types):<img width="575" alt="image" src="https://github.com/user-attachments/assets/9200029c-25d1-4901-8816-120cd3d521c1">
+Recommendation system (example input: Multi-Active Day Cream SPF 20 - All Skin Types):
+
+<img width="575" alt="image" src="https://github.com/user-attachments/assets/9200029c-25d1-4901-8816-120cd3d521c1">
 
 **Assumptions and simplifications**:
 Firstly, different ingredient names for the same ingredient in different lists are disregarded. In frequency analysis, while excluding inactive ingredients like water and glycerin it is assumed they are listed in the format the function expects. Some lists use slashes for alternative names; I split these into separate ingredients during encoding. Though this may double-count ingredients for specific products, it doesn't affect clustering results since the ingredients with alternate names would also be double-counted in other lists. The fungal acne trigger list in the code isn't exhaustive, and products may contain triggers not on the list. Lastly, the recommendation system assumes users input product names exactly as listed in the database; spelling errors or shortened names are not considered.
