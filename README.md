@@ -11,9 +11,11 @@ Computation is mainly incorporated through machine learning.  Ingredient lists o
 **Data**: The dataset is obtained from Kaggle: https://www.kaggle.com/datasets/kingabzpro/cosmetics-datasets?resource=download. The dataset contains information about product type, brand, name, price, rank, ingredients, and binary skin type suitability. The dataset is also included in the local directory. 
 
 **Key Results**:
+
 Chi-squared test result: Yes, price of a product and its rating are related. 
 
 Statistics: 
+
 <img width="662" alt="image" src="https://github.com/user-attachments/assets/88861076-1f43-4944-b8a6-a6f92fca7029">
 
 <img width="358" alt="image" src="https://github.com/user-attachments/assets/7bb3e205-e346-4b12-a2b9-b671c4a55f22">
