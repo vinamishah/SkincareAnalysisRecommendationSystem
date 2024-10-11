@@ -1,7 +1,10 @@
-**Name**: Skincare Analysis and Recommendation System
+**Project Title**: Skincare Analysis and Recommendation System
 
 **Goal**:
 The goal of the Skincare Product Analysis and Recommendation System is to leverage data-driven insights to provide consumers with the capability to make informed choices regarding cosmetic products. Personally, I am always on the lookout for more affordable and fungal acne-safe alternatives to products, which are also suitable for my skin type. By analysing skincare data and employing machine learning techniques, the Skincare Product Analysis and Recommendation System will do exactly this. First, it will provide the user with some skincare-related data including highly rated products, average prices of skincare products, extremely highly-priced products, frequently used ingredients for different products and skin types, and whether product characteristics like price and rating are correlated. Next, when the user inputs a certain product name, the recommendation system will output other products with similar formulations in the same overarching product category (e.g. Sunscreen, moisturizer etc ) suitable for the same skin type in ascending order of price with fungal acne triggers. This will help users find fungal acne-safe and more affordable alternatives to products with similar formulations and suitability. 
+
+ <img width="646" alt="image" src="https://github.com/user-attachments/assets/3ecc1d0e-7f6c-4803-8af8-7884d6cf32b2">
+
 
 **Program Overview and Requirements**:
 In terms of the structure of the program, first I convert the data into a dataframe and clean the data set. Then, I carry out statistical analysis including finding highly rated products, pricing, ingredient frequency and correlation. Then, I convert the ingredient lists of every product into binary data and to carry out K means clustering. Lastly, I create a recommendation system that takes a product input from the user and outputs similar products with their fungal acne triggers (if any).  
@@ -18,4 +21,7 @@ Firstly, different ingredient names for the same ingredient in different lists a
 In the future, frequent ingredient combinations for each product and skin type could also be evaluated. Ingredient distribution could also be studied. Additionally, the recommendation system could be enhanced by integrating factors like user preferences and ratings. Additional datasets or external sources containing ingredient safety ratings or consumer reviews could also be leveraged.
 
 **How to run**:
-The code may take about a minute to run. It will ask to input a product name, for which input any product name from the vast database. 
+Install the requirements: pip install -r requirements.txt
+Run the script: python skincare_analysis_recommendation.py
+The code may take about a minute to run. It will ask to input a product name for which Crème de la Mer may be used as an example.
+
