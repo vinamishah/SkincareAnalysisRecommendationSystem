@@ -24,6 +24,7 @@ Statistics:
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/e1f31088-2521-4c64-ba75-57f6dd6a52b2">
 
 
+
 Extremely high-priced products: ['LA MER - Little Miss Miracle Limited-Edition Crème de la Mer', 'FRESH - Crème Ancienne®', 'LA MER - The Concentrate', 'LA MER - The Regenerating Serum', 'BIOEFFECT - 30 Day Treatment', 'SHISEIDO - Future Solution LX Intensive Firming Contour Serum']
 
 Most common ingredients according to product type: {'Moisturizer': 'Dimethicone', 'Cleanser': 'Citric Acid', 'Treatment': 'Sodium Hyaluronate', 'Face Mask': 'Xanthan Gum', 'Eye cream': 'Dimethicone', 'Sun protect': 'Dimethicone'}
