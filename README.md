@@ -3,7 +3,24 @@
 **Goal**:
 The goal of the Skincare Product Analysis and Recommendation System is to leverage data-driven insights to provide consumers with the capability to make informed choices regarding cosmetic products. Personally, I am always on the lookout for more affordable and fungal acne-safe alternatives to products, which are also suitable for my skin type. By analysing skincare data and employing machine learning techniques, the Skincare Product Analysis and Recommendation System will do exactly this. First, it will provide the user with some skincare-related data including highly rated products, average prices of skincare products, extremely highly-priced products, frequently used ingredients for different products and skin types, and whether product characteristics like price and rating are correlated. Next, when the user inputs a certain product name, the recommendation system will output other products with similar formulations in the same overarching product category (e.g. Sunscreen, moisturizer etc ) suitable for the same skin type in ascending order of price with fungal acne triggers. This will help users find fungal acne-safe and more affordable alternatives to products with similar formulations and suitability. 
 
- <img width="646" alt="image" src="https://github.com/user-attachments/assets/3ecc1d0e-7f6c-4803-8af8-7884d6cf32b2">
+Function 	Description 
+readSpreadsheet	Converts the hyperlink of the spreadsheet containing the data into a dataframe
+cleanData	This function cleans the dataframe by dropping missing values and removing rows with '#NAME?', 'No info', or 'Visit' in the 'Ingredients' column. 
+statFinder	This function:
+1.Creates statistics dataframe where the index is product type the columns are Highest rated product name under each product type, mean price of each product type, max price of each product type, and min price of each product type.  
+2.Outputs a bar graph comparing mean price across each product type 
+3.Uses chi squared test to check if rating and price are correlated. 
+priceOutliers	Identifies and outputs a list of names of products which have extremely high prices (using z score to find outliers). Also creates a histogram to visualise price distribution. 
+ingredientAnalyser	Creates 2 dictionaries containing most common ingredients under each product type and each skin type. Considers only the active ingredients for both the cases(excludes water/aqua, glycerin, Phenoxyethanol and Butylene Glycol).
+ingredientEncoding	Converts the top 80% of ingredient lists of each product into a numerical format using Binary Encoding. Adds these binary columns to the input dataframe. 
+Kfinder	Finds the optimal k (number of clusters) value to perform K means clustering on the ingredient data using the elbow method.
+applyKMeansClustering	Applies K mean clustering to identify clusters of products with similar ingredient lists. Outputs arrays containing cluster labels for each product and cluster centres. 
+clusterVisualisation
+	Visualizes the clustering results by reducing dimensionality using PCA and plotting clusters by colour in a 2D space. 
+fungalAcneTriggers	Compares a pre-defined list of fungal acne triggers to create a fungal acne trigger list for every product and adds this column to dataframe. 
+recommendationSystem	Takes in a product name from user and creates a dataframe of products with similar ingredient compositions, and the same product type and skin suitability in ascending order of price. A fungal acne trigger list for each of these products is present too. 
+main 	Runs all the functions to output all the desired information
+![image](https://github.com/user-attachments/assets/7dd362e9-1334-4c9c-ac2d-339cfc654f59)
 
 
 **Program Overview and Requirements**:
