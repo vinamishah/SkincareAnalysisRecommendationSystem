@@ -9,8 +9,6 @@ First, by analyzing skincare data and employing machine learning techniques, thi
 - Frequently used ingredients for different product and skin types
 - Whether product characteristics like price and rating are correlated
 
-Next, when the user inputs a product name, the system outputs similar products with similar formulations, sorted by price, and flags potential fungal acne triggers. This will help users find affordable, fungal acne-safe alternatives.
-
 Next, when the user inputs a product name, the recommendation system outputs products with similar formulations in the same overarching product category (e.g., sunscreen, moisturizer, etc) suitable for the same skin type. The products are also sorted by price and have fungal acne trigger alerts. This will help users find affordable, fungal acne-safe alternatives.
 
 ## Program Overview and Requirements
