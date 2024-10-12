@@ -6,7 +6,9 @@ Consumers often struggle to find skincare products that meet their specific need
 ## Solution
 The Skincare Product Analysis and Recommendation System leverages data-driven insights and machine learning to help consumers make informed choices about skincare products. The system provides:
 
-Data Insights: The system offers valuable information on
+**Data Insights**
+
+The system offers valuable information on:
 - Highly-rated products
 - Average prices of skincare products
 - Extremely high-priced products
@@ -15,7 +17,9 @@ Data Insights: The system offers valuable information on
 
 These insights help consumers better understand the skincare market. They can see how much they should typically pay for different types of skincare products, identify the best and most expensive products in each category, and determine whether higher prices are truly linked to better ratings. Additionally, it provides guidance on which ingredients to look for in different products based on their specific skin type.
 
-Product Recommendations: Users can input the name of a product, and the system will recommend similar products with similar formulations, sorted by price and suitable for the same skin type. The recommendations also include alerts for any fungal acne triggers, making it easier for users to find affordable, safe alternatives.
+**Product Recommendations**
+
+Users can input the name of a product, and the system will recommend similar products with similar formulations, sorted by price and suitable for the same skin type. The recommendations also include alerts for any fungal acne triggers, making it easier for users to find affordable, safe alternatives.
 
 This helps consumers discover more affordable, fungal acne-safe products with similar formulations to the expensive, well-known products they might be familiar with.
 
