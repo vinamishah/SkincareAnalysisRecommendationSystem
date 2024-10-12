@@ -1,7 +1,5 @@
 # Skincare Analysis and Recommendation System
 
-## Goal
-The goal of the Skincare Product Analysis and Recommendation System is to leverage data-driven insights to help consumers make informed choices regarding cosmetic products. 
 
 First, by analyzing skincare data and employing machine learning techniques, this system provides insights into:
 - Highly-rated products
@@ -10,6 +8,25 @@ First, by analyzing skincare data and employing machine learning techniques, thi
 - Whether product characteristics like price and rating are correlated
 
 Next, when the user inputs a product name, the recommendation system outputs products with similar formulations in the same overarching product category (e.g., sunscreen, moisturizer, etc) suitable for the same skin type. The products are also sorted by price and have fungal acne trigger alerts. This will help users find affordable, fungal acne-safe alternatives.
+
+## Problem
+Consumers often struggle to find skincare products that meet their specific needs, such as affordability, suitability for their skin type, and safety from harmful ingredients like fungal acne triggers. While there are well-known, highly-rated products available, these often come with high price tags, may contain ingredients that aren't safe for fungal acne, or aren't suitable for certain skin types. This makes it difficult for consumers to find affordable and safe alternatives that work for them.
+
+## Solution
+The Skincare Product Analysis and Recommendation System leverages data-driven insights and machine learning to help consumers make informed choices about skincare products. The system provides:
+
+Data Insights: The system offers valuable information on
+- Highly-rated products
+- Average prices of skincare products
+- Extremely high-priced products
+- Frequently used ingredients for different products and skin types
+- Whether characteristics like price and rating are correlated
+
+These insights help consumers better understand the skincare market. They can see how much they should typically pay for different types of skincare products, identify the best and most expensive products in each category, and determine whether higher prices are truly linked to better ratings. Additionally, it provides guidance on which ingredients to look for in different products based on their specific skin type.
+
+Product Recommendations: Users can input the name of a product, and the system will recommend similar products with similar formulations, sorted by price and suitable for the same skin type. The recommendations also include alerts for any fungal acne triggers, making it easier for users to find affordable, safe alternatives.
+
+This helps consumers discover more affordable, fungal acne-safe products with similar formulations to the expensive, well-known products they might be familiar with.
 
 ## Program Overview and Requirements
 The program structure includes the following steps:
