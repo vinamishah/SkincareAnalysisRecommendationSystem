@@ -1,4 +1,5 @@
-**Project Title**: Skincare Analysis and Recommendation System
+#**Project Title**
+Skincare Analysis and Recommendation System
 
 **Goal**:
 The goal of the Skincare Product Analysis and Recommendation System is to leverage data-driven insights to provide consumers with the capability to make informed choices regarding cosmetic products. Personally, I am always on the lookout for more affordable and fungal acne-safe alternatives to products, which are also suitable for my skin type. By analysing skincare data and employing machine learning techniques, the Skincare Product Analysis and Recommendation System will do exactly this. First, it will provide the user with some skincare-related data including highly rated products, average prices of skincare products, extremely highly-priced products, frequently used ingredients for different products and skin types, and whether product characteristics like price and rating are correlated. Next, when the user inputs a certain product name, the recommendation system will output other products with similar formulations in the same overarching product category (e.g. Sunscreen, moisturizer etc ) suitable for the same skin type in ascending order of price with fungal acne triggers. This will help users find fungal acne-safe and more affordable alternatives to products with similar formulations and suitability. 
