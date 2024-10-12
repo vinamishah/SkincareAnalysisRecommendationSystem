@@ -1,6 +1,6 @@
-### PSEUDOCODE: Skincare Analysis and Recommendation System
+PSEUDOCODE: Skincare Analysis and Recommendation System
 
-### FUNCTIONS
+FUNCTIONS
 
 def readSpreadsheet(link):
     • Input: Link to a spreadsheet containing the data
@@ -92,25 +92,25 @@ def main():
         - Common ingredients
         - Product recommendations
 
-### UNIT TESTS
+UNIT TESTS
 
-#### statFinder(df)
+statFinder(df)
     • Test by value: Check if the maximum rating and summary statistics match expected results for a known dataset
     • Test by value: Verify the chi-squared test results by comparing them with a synthetic dataset
 
-#### priceOutliers(df)
+priceOutliers(df)
     • Test by value: Confirm high and low outliers are detected correctly
     • Test by type: Verify the output is a tuple with two lists (high and low outliers)
 
-#### ingredientEncoding(df)
+ingredientEncoding(df)
     • Test by value: Check if the binary encoding of ingredients works as expected
     • Test by value: Ensure that different ingredient list lengths are handled properly
 
-#### recommendationSystem(df_encoded, productname, k)
+recommendationSystem(df_encoded, productname, k)
     • Test by length: Ensure the recommendation list has the correct number of products for a given input
     • Test by value: Check if recommended products match expected values
 
-### PREDICTED OUTPUTS OF PROGRAM
+PREDICTED OUTPUTS OF PROGRAM
 
 1. **Statistics:**
     • Dataframe with highest ratings and price stats (mean, min, max)
