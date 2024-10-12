@@ -112,7 +112,7 @@ recommendationSystem(df_encoded, productname, k)
 
 PREDICTED OUTPUTS OF PROGRAM
 
-1. **Statistics:**
+1. Statistics:
     • Dataframe with highest ratings and price stats (mean, min, max)
     • Chi-squared test result
     • Bar graph comparing mean prices across product types
@@ -120,6 +120,6 @@ PREDICTED OUTPUTS OF PROGRAM
     • Lists of high-priced and low-priced products
     • Two lists: most common ingredients by product type and by skin type
 
-2. **Clustering & Recommendations:**
+2. Clustering & Recommendations:
     • PCA plot showing products grouped by ingredient similarity
     • Dataframe with recommended products, sorted by price, and fungal acne triggers
