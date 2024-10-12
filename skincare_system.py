@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -273,6 +274,10 @@ def main():
   df= readSpreadsheet(skincareData)   #reading data
   cleandf= cleanData(df)              #cleaning data
   print(cleandf['Price'].dtype)
+
+  # Ensure the output directory exists
+  if not os.path.exists('output'):
+      os.makedirs('output')
 
   #statistics
   print('Statistics:')
