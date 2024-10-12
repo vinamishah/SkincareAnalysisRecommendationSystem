@@ -1,5 +1,23 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-.DS_Store
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
 venv/
-*.pyc
-*.ipynb_checkpoints/
+env/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Ignore output folder
+output/
