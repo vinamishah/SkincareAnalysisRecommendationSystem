@@ -1,14 +1,5 @@
 # Skincare Analysis and Recommendation System
 
-
-First, by analyzing skincare data and employing machine learning techniques, this system provides insights into:
-- Highly-rated products
-- Average prices of skincare products
-- Frequently used ingredients for different product and skin types
-- Whether product characteristics like price and rating are correlated
-
-Next, when the user inputs a product name, the recommendation system outputs products with similar formulations in the same overarching product category (e.g., sunscreen, moisturizer, etc) suitable for the same skin type. The products are also sorted by price and have fungal acne trigger alerts. This will help users find affordable, fungal acne-safe alternatives.
-
 ## Problem
 Consumers often struggle to find skincare products that meet their specific needs, such as affordability, suitability for their skin type, and safety from harmful ingredients like fungal acne triggers. While there are well-known, highly-rated products available, these often come with high price tags, may contain ingredients that aren't safe for fungal acne, or aren't suitable for certain skin types. This makes it difficult for consumers to find affordable and safe alternatives that work for them.
 
