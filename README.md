@@ -26,17 +26,17 @@ Users can input the name of a product, and the system will recommend similar pro
 
 This helps consumers discover more affordable, fungal acne-safe products with similar formulations to the expensive, well-known products they might be familiar with.
 
-## Program Overview and Requirements
+## Key Machine Learning Techniques:
+- **Ingredient Set Encoding**: Converts ingredients into binary columns for numerical analysis.
+- **K-Means Clustering**: Groups products based on ingredient composition(optimal k value is found using the elbow method).
+- **Principal Component Analysis (PCA)**: Reduces data dimensionality for visualization.
+
+## Program Overview
 The program structure includes the following steps:
 1. Convert the data into a dataframe and clean it.
 2. Perform statistical analysis (e.g., product ratings, pricing, and ingredient frequency).
 3. Convert ingredient lists into binary data and apply K-means clustering to group similar products.
 4. Build a recommendation system that suggests products based on ingredient similarity.
-
-### Key Machine Learning Techniques:
-- **Ingredient Set Encoding**: Converts ingredients into binary columns for numerical analysis.
-- **K-Means Clustering**: Groups products based on ingredient composition(optimal k value is found using the elbow method).
-- **Principal Component Analysis (PCA)**: Reduces data dimensionality for visualization.
 
 ## Data
 - **Source**: The dataset is obtained from Kaggle: [Cosmetics Datasets](https://www.kaggle.com/datasets/kingabzpro/cosmetics-datasets?resource=download).
