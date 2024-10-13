@@ -4,7 +4,7 @@
 The Skincare Product Analysis and Recommendation System uses data-driven insights and machine learning techniques in Python to assist consumers in making informed skincare choices. By analyzing extensive skincare data, the system provides insights into highly-rated products, pricing trends, and ingredient analysis. It also offers personalized product recommendations based on formulation comparison, helping users find affordable, safe, and effective alternatives to well-known skincare products that suit their skin type and avoid fungal acne triggers.
 
 ## Problem
-Consumers often struggle to find skincare products that meet their specific needs, such as affordability, suitability for their skin type, and safety from harmful ingredients like fungal acne triggers. While there are well-known, highly-rated products available, these often come with high price tags, may contain ingredients that aren't safe for fungal acne, or aren't suitable for certain skin types. This makes it difficult for consumers to find affordable and safe alternatives that work for them.
+Consumers often struggle to find skincare products that meet their specific needs; while there are well-known, highly-rated products available, these often come with high price tags, may contain ingredients that aren't safe for fungal acne, or aren't suitable for certain skin types. This makes it difficult for consumers to find affordable and safe alternatives that work for them.
 
 ## Solution
 The Skincare Product Analysis and Recommendation System leverages data-driven insights and machine learning to help consumers make informed choices about skincare products. The system provides:
