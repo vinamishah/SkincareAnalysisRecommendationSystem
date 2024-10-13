@@ -26,7 +26,7 @@ Users can input the name of a product, and the system will recommend similar pro
 
 This helps consumers discover more affordable, fungal acne-safe products with similar formulations to the expensive, well-known products they might be familiar with.
 
-## Key Machine Learning Techniques:
+## Key Machine Learning Techniques
 - **Ingredient Set Encoding**: Converts ingredients into binary columns for numerical analysis.
 - **K-Means Clustering**: Groups products based on ingredient composition(optimal k value is found using the elbow method).
 - **Principal Component Analysis (PCA)**: Reduces data dimensionality for visualization.
